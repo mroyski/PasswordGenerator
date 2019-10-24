@@ -27,12 +27,14 @@ def random_special():
     return s.punctuation[random_num]
 
 def generate():
+    # no () because result of function is stored not the function itself
     func_list = [random_lower_letter, random_upper_letter, random_num, random_special]
     pw = []
     x = 0
+    limit = r.randrange(4, 8)
     # pos refers to func_list index and counts how many times they have been added
     pos0, pos1, pos2, pos3 = 0, 0, 0, 0
-    while x < 5:
+    while x < limit:
         y = r.randrange(0, 4)
         if y == 0:
             if pos0 < 2:
